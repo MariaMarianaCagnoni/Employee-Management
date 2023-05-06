@@ -19,7 +19,7 @@ public class EmployeeService {
         this.employeeRepository = employeeRepository;
     }
 
-    public List<Employee> findAllEmployee() {
+    public List<Employee> findAllEmployees() {
 
         return this.employeeRepository.findAll();
     }
@@ -34,11 +34,15 @@ public class EmployeeService {
         return employeeRepository.findEmployeeById(id)
                 .orElseThrow(() -> new UserNotFoundException("User by id " + id + " was not found"));
     }
+
     public void deleteEmployeeById(Long id) {
         this.employeeRepository.deleteById(id);
     }
 
     public Employee updateEmployee(Employee employee) {
         return this.employeeRepository.save(employee);
+    }
+
+    public void deleteEmployee(Long id) {
     }
 }
