@@ -4,6 +4,7 @@ import com.example.employeemanager.exeception.UserNotFoundException;
 import com.example.employeemanager.model.Employee;
 import com.example.employeemanager.repository.EmployeeRepository;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public class EmployeeService {
 
     private EmployeeRepository employeeRepository;
 
+    @Autowired
     public EmployeeService(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
@@ -44,5 +46,7 @@ public class EmployeeService {
     }
 
     public void deleteEmployee(Long id) {
+        this.employeeRepository.deleteById(id);
+
     }
 }
