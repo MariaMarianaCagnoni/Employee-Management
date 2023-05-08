@@ -14,7 +14,7 @@ import java.util.UUID;
 @Service
 public class EmployeeService {
 
-    private EmployeeRepository employeeRepository;
+    private final EmployeeRepository employeeRepository;
 
     @Autowired
     public EmployeeService(EmployeeRepository employeeRepository) {
@@ -26,6 +26,7 @@ public class EmployeeService {
         return this.employeeRepository.findAll();
     }
 
+
     public Employee addEmployee(Employee employee) {
         employee.setEmployeeCode(UUID.randomUUID().toString());
         return this.employeeRepository.save(employee);
@@ -33,13 +34,10 @@ public class EmployeeService {
     }
 
     public Employee findEmployeeById(Long id) {
-        return employeeRepository.findEmployeeById(id)
+        return this.employeeRepository.findEmployeeById(id)
                 .orElseThrow(() -> new UserNotFoundException("User by id " + id + " was not found"));
     }
 
-    public void deleteEmployeeById(Long id) {
-        this.employeeRepository.deleteById(id);
-    }
 
     public Employee updateEmployee(Employee employee) {
         return this.employeeRepository.save(employee);
