@@ -35,7 +35,7 @@ public class Employee implements Serializable {
     private String phone;
 
     @Column(name = "employee_code", updatable = false, nullable = false)
-    private  String employeeCode;
+    private String employeeCode;
 
 
 }
