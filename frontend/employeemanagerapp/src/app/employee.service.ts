@@ -14,12 +14,12 @@ export class EmployeeService {
   constructor(private http: HttpClient) { }
 
   public getEmployees(): Observable<Employee[]> {
-    return this.http.get<Employee[]>(`${this.apiUrl}/employee`);
+    return this.http.get<Employee[]>(`${this.apiUrl}/employees`);
 
   }
 
   public addEmployees(emplpoyee: Employee): Observable<Employee> {
-    return this.http.post<Employee>(`${this.apiUrl}/employee`, emplpoyee);
+    return this.http.post<Employee>(`${this.apiUrl}/employees`, emplpoyee);
 
   }
   public updateEmployees(employee: Employee): Observable<Employee> {
@@ -27,7 +27,7 @@ export class EmployeeService {
 
   }
   public deleteEmployees(employeeId: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/employee/${employeeId}`);
+    return this.http.delete<void>(`${this.apiUrl}/employees/${employeeId}`);
 
   }
 }
