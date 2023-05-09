@@ -1,6 +1,8 @@
 server:
   error:
     include-stacktrace: on_param
+    include-binding-errors: always
+    include-message: always
 
 spring:
   datasource:
@@ -11,3 +13,10 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
