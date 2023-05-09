@@ -4,6 +4,7 @@ import com.example.employeemanager.exeception.UserNotFoundException;
 import com.example.employeemanager.model.Employee;
 import com.example.employeemanager.repository.EmployeeRepository;
 import lombok.extern.log4j.Log4j2;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +28,7 @@ public class EmployeeService {
     }
 
 
-    public Employee addEmployee(Employee employee) {
+    public Employee addEmployee(@NotNull Employee employee) {
         employee.setEmployeeCode(UUID.randomUUID().toString());
         return this.employeeRepository.save(employee);
 

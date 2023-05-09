@@ -14,9 +14,12 @@ spring:
       ddl-auto: update
     show-sql: true
 
-
 management:
   endpoints:
     web:
       exposure:
         include: '*'
+
+logging:
+  file:
+    path: C:\\LogsEmployee\\logs
