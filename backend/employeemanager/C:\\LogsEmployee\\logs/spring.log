@@ -23,3 +23,6 @@
 2023-05-09T13:09:22.800-03:00  INFO 18886 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2023-05-09T13:09:22.818-03:00  INFO 18886 --- [restartedMain] c.e.e.EmployeemanagerApplication         : Started EmployeemanagerApplication in 3.746 seconds (process running for 4.205)
 2023-05-09T13:09:22.923-03:00  INFO 18886 --- [restartedMain] c.e.e.EmployeemanagerApplication         : Application started successfully
+2023-05-09T13:17:18.108-03:00  INFO 18886 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-05-09T13:17:18.111-03:00  INFO 18886 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-05-09T13:17:18.145-03:00  INFO 18886 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

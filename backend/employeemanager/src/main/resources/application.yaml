@@ -20,6 +20,4 @@ management:
       exposure:
         include: '*'
 
-logging:
-  file:
-    path: C:\\LogsEmployee\\logs
+
