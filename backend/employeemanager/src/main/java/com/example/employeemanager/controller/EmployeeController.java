@@ -1,5 +1,7 @@
 package com.example.employeemanager.controller;
 
+import com.example.employeemanager.dto.EmployeeDTO;
+import com.example.employeemanager.mapper.EmployeeDTOMapper;
 import com.example.employeemanager.model.Employee;
 import com.example.employeemanager.service.EmployeeService;
 import lombok.extern.log4j.Log4j2;
@@ -25,8 +27,8 @@ public class EmployeeController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Employee>> getAllEmployees() {
-        List<Employee> employees = employeeService.findAllEmployees();
+    public ResponseEntity<List<EmployeeDTO>> getAllEmployees() {
+        List<EmployeeDTO> employees = employeeService.findAllEmployees();
         return new ResponseEntity<>(employees, HttpStatus.OK);
     }
 
